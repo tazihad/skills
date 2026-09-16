@@ -4,5 +4,5 @@ My personal skills for `antigravity-cli`.
 `.gemini/GEMINI.md` -> `~/.gemini/GEMINI.md`
 
 # Must use skills
-https://github.com/addyosmani/agent-skills#quick-start
+https://github.com/addyosmani/agent-skills#quick-start  
 https://github.com/cursor/plugins/tree/main/pstack/skills/unslop
