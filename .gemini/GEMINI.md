@@ -24,6 +24,21 @@ older versions. The tier roles never change — only the version numbers evolve.
 
 ---
 
+### Model Switching & Echo Protocol
+Whenever a task begins, switches tiers, or spawns a subagent, the agent MUST explicitly output an announcement tag on its own line before generating any other content or tool calls:
+
+`[Active Model: <tier-role> (<exact-model-name>)]`
+
+**Examples:**
+- `[Active Model: opus-thinking (claude-opus-5-thinking)]`
+- `[Active Model: flash-low (gemini-3.9-flash-low)] — Fallback from opus-thinking`
+- `[Active Model: flash-medium (gemini-3.9-flash-medium)]`
+
+**Rules:**
+1. **Always Prepend:** Print this tag as the very first line of output whenever the model context or spawned subagent changes.
+2. **Flag Fallbacks:** If a fallback occurs (e.g., `opus-thinking` is down), append `— Fallback from <original-tier>` to the tag.
+3. **No Silent Switches:** Subagents must include their designated tag in their initial output block.
+
 ### Fallback Chain
 
 If a model from a higher tier is unavailable, fall back in this order:
