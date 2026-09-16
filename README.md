@@ -5,3 +5,4 @@ My personal skills for `antigravity-cli`.
 
 # Must use skills
 https://github.com/addyosmani/agent-skills#quick-start
+https://github.com/cursor/plugins/tree/main/pstack/skills/unslop
